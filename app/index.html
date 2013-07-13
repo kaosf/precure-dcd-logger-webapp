@@ -18,7 +18,57 @@
     <!-- endbuild -->
   </head>
   <body>
-    <p>プリキュアデータカードダス記録帳</p>
+    <div id="header">
+      <select id="production">
+        <option>ドキドキ！プリキュア</option>
+        <option>スイートプリキュア♪</option>
+        <option>スマイルプリキュア</option>
+      </select>
+      <br>
+      <select id="version">
+        <option>#03</option>
+        <option>#02</option>
+        <option>#01</option>
+      </select>
+      <button id="change">変更</button>
+    </div>
+    <div id="main">
+      <div class="item">
+        <div>
+          <span><input type="checkbox" class="haveOne"></span>
+          <span>01</span>
+          <span class="name">xxxx</span>
+          <span class="detailOpener">▶</span>
+        </div>
+        <div style="display: none">
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <span><input type="checkbox" class="haveOne"></span>
+          <span>02</span>
+          <span class="name">xxxx</span>
+          <span class="detailOpener">▼</span>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td>複数所持</td>
+              <td>
+                <input type="checkbox" class="haveMany">
+                <select class="numberOf">
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </td>
+            </tr>
+            <tr><td>レアリティ</td><td>☆☆☆</td></tr>
+            <tr><td>キャラクター</td><td>ああああ</td></tr>
+          </table>
+          <a href="http://precure-live.com/allstars/">公式サイトの情報を見る</a>
+        </div>
+      </div>
+    </div>
 
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
