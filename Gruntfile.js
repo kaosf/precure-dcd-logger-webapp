@@ -335,6 +335,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'jade',
         'useminPrepare',
         'concurrent:dist',
         'concat',
