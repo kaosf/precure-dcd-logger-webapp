@@ -164,6 +164,19 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jade: {
+            compile: {
+                // options: {
+                //     data: {
+                //         debug: false
+                //     }
+                // },
+                files: {
+                    // "path/to/dest.html": ["path/to/templates/*.jade", "another/path/tmpl.jade"]
+                    "<%= yeoman.app %>/index.html": "<%= yeoman.app %>/index.jade"
+                }
+            }
+        },
         // not used since Uglify task does concat,
         // but still available if needed
         /*concat: {
@@ -322,6 +335,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'jade',
         'useminPrepare',
         'concurrent:dist',
         'concat',
