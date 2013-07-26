@@ -173,7 +173,7 @@ module.exports = function (grunt) {
                 // },
                 files: {
                     // "path/to/dest.html": ["path/to/templates/*.jade", "another/path/tmpl.jade"]
-                    "<%= yeoman.app %>/index.html": "<%= yeoman.app %>/index.jade"
+                    '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.jade'
                 }
             }
         },
