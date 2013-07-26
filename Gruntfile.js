@@ -166,6 +166,9 @@ module.exports = function (grunt) {
         },
         jade: {
             compile: {
+                options: {
+                    pretty: true
+                },
                 files: {
                     '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.jade'
                 }
