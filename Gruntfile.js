@@ -25,6 +25,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
+            jade: {
+              files: ['<%= yeoman.app %>/index.jade'],
+              tasks: ['jade:compile']
+            },
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
                 tasks: ['coffee:dist']
@@ -293,13 +297,16 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
+                'jade',
                 'compass',
                 'coffee:dist'
             ],
             test: [
+                'jade',
                 'coffee'
             ],
             dist: [
+                'jade',
                 'coffee',
                 'compass',
                 'imagemin',
