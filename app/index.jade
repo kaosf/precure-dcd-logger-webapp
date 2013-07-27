@@ -47,7 +47,7 @@ html(class='no-js')
         option #01
       button#change 変更
     #main
-      format = function(x) { return ((x <= 10)? '0' + x: x) }
+      - format = function(x) { return ((x < 10)? '0' + x: x) }
       for item, index in cards
         .item
           div
