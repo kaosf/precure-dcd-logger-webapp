@@ -47,37 +47,32 @@ html(class='no-js')
         option #01
       button#change 変更
     #main
-      .item
-        div
-          span
-            input.haveOne(type='checkbox')
-          span 01
-          span.name xxxx
-          span.detailOpener ▶
-        .detail(style='display: none')
-      .item
-        div
-          span
-            input.haveOne(type='checkbox')
-          span 02
-          span.name xxxx
-          span.detailOpener ▼
-        .detail
-          table
-            tr
-              td 複数所持
-              td
-                input.haveMany(type='checkbox')
-                select.numberOf
-                  option 2
-                  option 3
-            tr
-              td レアリティ
-              td ☆☆☆
-            tr
-              td キャラクター
-              td ああああ
-          a(href='http://precure-live.com/allstars/') 公式サイトの情報を見る
+      format = function(x) { return ((x <= 10)? '0' + x: x) }
+      cards = [{name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}]
+      for item, index in cards
+        .item
+          div
+            span
+              input.haveOne(type='checkbox')
+            span= format(index + 1)
+            span.name= item.name
+            span.detailOpener ▶
+          .detail(style='display: none')
+            table
+              tr
+                td 複数所持
+                td
+                  input.haveMany(type='checkbox')
+                  select.numberOf
+                    option 2
+                    option 3
+              tr
+                td レアリティ
+                td ☆☆☆
+              tr
+                td キャラクター
+                td ああああ
+            a(href='http://precure-live.com/allstars/') 公式サイトの情報を見る
 
     script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
