@@ -25,6 +25,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
+            data: {
+              files: ['<%= yeoman.app %>/*.js'],
+              tasks: ['jade:compile']
+            },
             jade: {
               files: ['<%= yeoman.app %>/index.jade'],
               tasks: ['jade:compile']
@@ -171,6 +175,7 @@ module.exports = function (grunt) {
         jade: {
             compile: {
                 options: {
+                    data: require('./app/data'),
                     pretty: true
                 },
                 files: {
