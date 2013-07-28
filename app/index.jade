@@ -55,7 +55,9 @@ html(class='no-js')
               input.haveOne(type='checkbox')
             span= format(index + 1)
             span.name= item.name
-            span.detailOpener ▶
+            span.detailOpener
+              span ▶
+              span(style='display: none') ▼
           .detail(style='display: none')
             table
               tr
