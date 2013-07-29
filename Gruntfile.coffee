@@ -5,17 +5,15 @@ lrSnippet = require("connect-livereload")(port: LIVERELOAD_PORT)
 mountFolder = (connect, dir) ->
   connect.static require("path").resolve(dir)
 
-
 # # Globbing
 # for performance reasons we're only matching one level down:
 # 'test/spec/{,*/}*.js'
 # use this if you want to recursively match all subfolders:
 # 'test/spec/**/*.js'
 module.exports = (grunt) ->
-  
   # load all grunt tasks
   require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
-  
+
   # configurable paths
   yeomanConfig =
     app: "app"
@@ -53,7 +51,6 @@ module.exports = (grunt) ->
     connect:
       options:
         port: 9000
-        
         # change this to '0.0.0.0' to access the server from outside
         hostname: "localhost"
 
@@ -144,13 +141,12 @@ module.exports = (grunt) ->
         files:
           "<%= yeoman.app %>/index.html": "<%= yeoman.app %>/index.jade"
 
-    
     # not used since Uglify task does concat,
     # but still available if needed
     #concat: {
     #            dist: {}
     #        },
-    
+
     # not enabled since usemin task does concat and uglify
     # check index.html to edit your build targets
     # enable this task if you prefer defining your build targets here
@@ -194,7 +190,7 @@ module.exports = (grunt) ->
         ]
 
     cssmin: {}
-    
+
     # This task is pre-configured if you do not wish to use Usemin
     # blocks for your CSS. By default, the Usemin block from your
     # `index.html` will take care of minification, e.g.
@@ -212,7 +208,7 @@ module.exports = (grunt) ->
     htmlmin:
       dist:
         options: {}
-        
+
         #removeCommentsFromCDATA: true,
         #                    // https://github.com/yeoman/grunt-usemin/issues/44
         #                    //collapseWhitespace: true,
@@ -229,7 +225,6 @@ module.exports = (grunt) ->
           dest: "<%= yeoman.dist %>"
         ]
 
-    
     # Put files not handled in other tasks here
     copy:
       dist:
