@@ -48,11 +48,13 @@ html(class='no-js')
       button#change 変更
     #main
       - format = function(x) { return ((x < 10)? '0' + x: x) }
+      - format3 = function(x) { return ((x < 100)? '0' + x: x) }
+      - generateId = function(x, y, z) { return (format(x) + '-' + format3(y) + '-' + format(z)) }
       for item, index in cards
         .item
           div
             span
-              input.haveOne(type='checkbox')
+              input(id=generateId(10, 30, index + 1)).haveOne(type='checkbox')
             span= format(index + 1)
             span.name= item.name
             span.detailOpener
