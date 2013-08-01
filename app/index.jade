@@ -50,7 +50,7 @@ html(class='no-js')
       - format = function(x) { return ((x < 10)? '0' + x: x) }
       - format3 = function(x) { return ((x < 100)? '0' + x: x) }
       - generateId = function(x, y, z) { return (format(x) + '-' + format3(y) + '-' + format(z)) }
-      for item, index in cards
+      for item, index in productions['10'].versions['30'].cards
         .item
           div
             span
