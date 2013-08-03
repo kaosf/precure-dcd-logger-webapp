@@ -42,40 +42,44 @@ html(class='no-js')
         option スイートプリキュア♪
       br
       select#version
+        option #04
         option #03
         option #02
         option #01
+        option プロモーション
       button#change 変更
-    #main
-      - format = function(x) { return ((x < 10)? '0' + x: x) }
-      - format3 = function(x) { return ((x < 100)? '0' + x: x) }
-      - generateId = function(x, y, z) { return (format(x) + '-' + format3(y) + '-' + format(z)) }
-      for item, index in productions['10'].versions['30'].cards
-        .item
-          div
-            span
-              input(id=generateId(10, 30, index + 1)).haveOne(type='checkbox')
-            span= format(index + 1)
-            span.name= item.name
-            span.detailOpener
-              span ▶
-              span(style='display: none') ▼
-          .detail(style='display: none')
-            table
-              tr
-                td 複数所持
-                td
-                  input.haveMany(type='checkbox')
-                  select.numberOf
-                    option 2
-                    option 3
-              tr
-                td レアリティ
-                td ☆☆☆
-              tr
-                td キャラクター
-                td キャラクター名
-            a(href='http://precure-live.com/allstars/') 公式サイトの情報を見る
+    - format = function(x) { return ((x < 10)? '0' + x: x) }
+    - format3 = function(x) { return ((x < 100)? '0' + x: x) }
+    - mainStyle = function(x) { return ((x === '30')? '': 'display:none') }
+    - generateId = function(x, y, z) { return (format(x) + '-' + format3(y) + '-' + format(z)) }
+    for cards, version in productions['10'].versions
+      .main(style=mainStyle(version))
+        for item, index in cards.cards
+          .item
+            div
+              span
+                input(id=generateId(10, version, index + 1)).haveOne(type='checkbox')
+              span= format(index + 1)
+              span.name= item.name
+              span.detailOpener
+                span ▶
+                span(style='display: none') ▼
+            .detail(style='display: none')
+              table
+                tr
+                  td 複数所持
+                  td
+                    input.haveMany(type='checkbox')
+                    select.numberOf
+                      option 2
+                      option 3
+                tr
+                  td レアリティ
+                  td ☆☆☆
+                tr
+                  td キャラクター
+                  td キャラクター名
+              a(href='http://precure-live.com/allstars/') 公式サイトの情報を見る
 
     script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
