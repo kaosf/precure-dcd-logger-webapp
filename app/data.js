@@ -11,8 +11,8 @@ module.exports = {
     9: undefined,
     10: {
       versions: {
-        10: undefined,
-        20: undefined,
+        10: {cards: []},
+        20: {cards: []},
         30: {
           cards: [
             {name: "浄化キュアラビーズ（キュアハート）", type: 0},
