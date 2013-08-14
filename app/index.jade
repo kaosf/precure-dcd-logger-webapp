@@ -50,7 +50,7 @@ html(class='no-js')
       button#change 変更
     - format = function(x) { return ((x < 10)? '0' + x: x) }
     - format3 = function(x) { return ((x < 100)? '0' + x: x) }
-    - mainStyle = function(x) { return ((x === '30')? '': 'display:none') }
+    - mainStyle = function(x) { return ((x === '30' || x === '40')? '': 'display:none') }
     - generateId = function(x, y, z) { return (format(x) + '-' + format3(y) + '-' + format(z)) }
     for cards, version in productions['10'].versions
       .main(style=mainStyle(version))
