@@ -18,8 +18,11 @@ generateId = (production, version, cardId) ->
   return "#{format2 production}-#{format3 version}-#{format2 cardId}"
 
 $ ->
+  ids =
+    30: [1..60]
+    40: [1..64]
   for version in [30, 40]
-    for i in [1..60]
+    for i in ids[version]
       id = generateId(10, version, i)
       having = localStorage.getItem(id)
       checkBox = $("input##{id}")
